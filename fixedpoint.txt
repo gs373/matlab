@@ -1,12 +1,15 @@
 clc
 clear all
-f=@(x)(x-x^3 - 4*x^2 +10);
+syms x
+f=@(x) 2*sin(pi*x)+x;
+g(x) =diff(f(x))
+h(x)=x-f(x)/g(x)
 a=1;
 b=2;
-x0= (a+b)/2;
-x1= f(x0);
-while(abs(x1-x0)>=0.001)
+x0= 1;
+x1= h(x0);
+while(abs(x1-x0)>=0.01)
     x0=x1;
-    x1=f(x0);
+    x1=h(x0);
 end
-x1
+vpa(x1)

@@ -12,4 +12,4 @@ while(abs(x1-x0)>=0.01)
     x0=x1;
     x1=h(x0);
 end
-(x1)
+vpa(x1)
